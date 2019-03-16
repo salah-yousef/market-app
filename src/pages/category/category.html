@@ -1,0 +1,110 @@
+<!--
+  Generated template for the CategoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title>{{title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="search"></ion-icon>
+      </button>
+      <button ion-button icon-only>
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-card *ngIf="dataFetch">
+      <ion-spinner *ngIf="imgLoad < 5"></ion-spinner>
+    <img (error)="onError($event)" [hidden]="imgLoad < 5" [src]="categories[id]?.category_img" (load)="imgLoaded()"/>
+
+    <ion-segment [(ngModel)]="tap">
+        <ion-segment-button value="tap1">
+          Kittens
+        </ion-segment-button>
+        <ion-segment-button value="tap2">
+          Puppies
+        </ion-segment-button>
+    </ion-segment>
+
+    <div [ngSwitch]="tap">
+        <ion-list *ngSwitchCase="'tap1'">
+            <ion-grid no-padding>
+                <ion-row>
+                  <ion-col col-6 *ngFor="let product of products">
+                    <ion-card>
+                        <ion-spinner *ngIf="imgLoad < 5"></ion-spinner>
+                        <ion-fab [hidden]="imgLoad < 5" top right>
+                            <button (click)="onOpenProduct(product)" ion-fab color="vibrant" mini>
+                              <ion-icon name="add">
+
+                              </ion-icon>
+                            </button>
+                        </ion-fab>
+                        <img (error)="onError($event)" [hidden]="imgLoad < 5" [src]="product.product_img" (load)="imgLoaded()"/>
+                        <ion-item [hidden]="imgLoad < 5">
+                          <ion-icon name='pricetag' item-start style="color: #d03e84"></ion-icon>
+                          <ion-badge item-end>{{product.price}}</ion-badge>
+                        </ion-item>
+                        <ion-item [hidden]="imgLoad < 5">
+                          <ion-icon name='flask' item-start style="color: #55acee"></ion-icon>
+                          <ion-badge item-end>{{product.weight}}</ion-badge>
+                        </ion-item>
+                      </ion-card>
+                  </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-list>
+      
+        <ion-list *ngSwitchCase="'tap2'">
+            <ion-grid no-padding>
+                <ion-row>
+                  <ion-col col-6 *ngFor="let product of products">
+                    <ion-card>
+                        <ion-spinner *ngIf="imgLoad < 5"></ion-spinner>
+                        <ion-fab [hidden]="imgLoad < 5" top right>
+                            <button (click)="onOpenProduct(product)" ion-fab color="vibrant" mini>
+                              <ion-icon name="add">
+
+                              </ion-icon>
+                            </button>
+                        </ion-fab>
+                        <img (error)="onError($event)" [hidden]="imgLoad < 5" [src]="product.product_img" (load)="imgLoaded()"/>
+                        <ion-item [hidden]="imgLoad < 5">
+                          <ion-icon name='pricetag' item-start style="color: #d03e84"></ion-icon>
+                          <ion-badge item-end>{{product.price}}</ion-badge>
+                        </ion-item>
+                        <ion-item [hidden]="imgLoad < 5">
+                          <ion-icon name='flask' item-start style="color: #55acee"></ion-icon>
+                          <ion-badge item-end>{{product.weight}}</ion-badge>
+                        </ion-item>
+                      </ion-card>
+                  </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-list>
+    </div>
+  </ion-card>
+</ion-content>
+
+<ion-footer class="myColor">
+    <ion-toolbar transparent>
+      <ion-title>
+        <ion-grid>
+          <ion-row>
+            <ion-col col-6>
+              <button clear center ion-button>Sort by</button>
+            </ion-col>
+            <ion-col col-6>
+              <button clear center ion-button>Filter</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-title>
+    </ion-toolbar>
+  </ion-footer>

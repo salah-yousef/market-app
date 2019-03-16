@@ -1,0 +1,20 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+/*
+  Generated class for the DataProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+@Injectable()
+export class DataProvider {
+  constructor(public http: HttpClient) {
+    console.log('Hello DataProvider Provider');
+  }
+
+  getData() {
+    return this.http.get('https://5bcce576cf2e850013874767.mockapi.io/task/categories');
+  }
+
+}

@@ -1,0 +1,28 @@
+page-category {
+    ion-spinner{
+        left: 40%;
+    }
+    ion-card{
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    ion-row{
+        ion-card{
+            width: 100% !important;
+            height: 100% !important;
+            border: 1px  ridge ;
+            border-width: 0.5px;
+            margin: 0 !important;
+        }
+    }
+    ion-footer{
+        text-align: center !important;
+        background-color: #FD6768;
+        button{
+            color: white !important;
+            text-transform: none !important;
+        }
+    }
+
+
+}

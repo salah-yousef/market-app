@@ -6,9 +6,11 @@ page-home {
     ion-row{
         ion-card{
             width:100% !important;
+            height: 100% !important; 
             margin: 2px !important;
             img{
-                width:100%;
+                width: 100%;
+                height: 100%;
             }
         }
     }
@@ -30,25 +32,13 @@ page-home {
     font-size: 1.3em;
     position: absolute;
     bottom: 4%;
-    right: 29%;
-    width: 100%;
-    color: #fff;
-  }
-
-  .card-subtitle-3 {
-    font-size: 1.3em;
-    position: absolute;
-    bottom: 4%;
     right: 22%;
     width: 100%;
-    color: #fff;
+    color: #a3a2b5;
   }
-  .card-subtitle-2{
-    font-size: 1.3em;
-    position: absolute;
-    bottom: 4%;
-    right: 40%;
-    width: 100%;
-    color: #fff;
+
+  .cover {
+    object-fit: cover;
   }
+  
 }

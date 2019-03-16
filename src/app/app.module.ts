@@ -8,6 +8,10 @@ import { NativePageTransitions } from '@ionic-native/native-page-transitions';
 import { MyApp } from './app.component';
 import { SlidesPage } from '../pages/slides/slides';
 import { HomePageModule } from '../pages/home/home.module';
+import { CategoryPageModule } from '../pages/category/category.module';
+import { DataProvider } from '../providers/data/data';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductPageModule } from '../pages/product/product.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,10 @@ import { HomePageModule } from '../pages/home/home.module';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HomePageModule
+    HomePageModule,
+    CategoryPageModule,
+    ProductPageModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -28,7 +35,8 @@ import { HomePageModule } from '../pages/home/home.module';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    NativePageTransitions
+    NativePageTransitions,
+    DataProvider
   ]
 })
 export class AppModule {}
