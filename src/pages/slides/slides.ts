@@ -37,22 +37,18 @@ export class SlidesPage {
 
   ionViewWillLeave() {
 
-     /* this.options = {
+     this.options = {
        direction: 'left',
        duration: 500       
       };
    
     this.nativePageTransitions.slide(this.options)
       .then()
-      .catch(); */
-   
+      .catch();   
    }
 
- 
-
-  
   goToHome() {
-    //this.nativePageTransitions.slide(this.options);
+    this.nativePageTransitions.slide(this.options);
     this.navCtrl.push(HomePage);
   }
 }
