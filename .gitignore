@@ -34,3 +34,6 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 market.jks
+market.keystore
+market.apk
+app-release-unsigned.apk
